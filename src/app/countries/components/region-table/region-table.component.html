@@ -1,0 +1,22 @@
+<div *ngIf="regions.length==0; else table"  class="alert alert-warning text-center">
+  No hay regiones
+</div>
+
+
+
+<ng-template #table>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let region of regions; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{region.capital}}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
